@@ -1,4 +1,4 @@
-# IT Security - Marketplace Lab
+# IT Security - Webshop Lab
 ZHAW - IT Security Lab - Application Containerized using Maven's spotify docker plugin.
 
 ## Setup
