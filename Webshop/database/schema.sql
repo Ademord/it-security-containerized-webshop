@@ -100,15 +100,16 @@ INSERT INTO `rating` (`product_id`, `shopuser_id`, `mark`, `commentary`) VALUES
 
 USE mysql;
 
-DROP USER IF EXISTS 'webshop_user'@'localhost';
+DROP USER IF EXISTS 'webshop_user'@'%';
 
-CREATE USER 'webshop_user'@'localhost' IDENTIFIED BY 'changeit';
-
-GRANT SELECT ON `webshop`.* TO 'webshop_user'@'localhost';
-GRANT INSERT, UPDATE, DELETE ON `webshop`.`shopuser` TO 'webshop_user'@'localhost';
-GRANT INSERT, UPDATE, DELETE ON `webshop`.`v_product` TO 'webshop_user'@'localhost';
-GRANT INSERT, UPDATE, DELETE ON `webshop`.`product` TO 'webshop_user'@'localhost';
-GRANT INSERT, UPDATE, DELETE ON `webshop`.`purchase` TO 'webshop_user'@'localhost';
-GRANT INSERT, UPDATE, DELETE ON `webshop`.`offer` TO 'webshop_user'@'localhost';
-GRANT INSERT, UPDATE, DELETE ON `webshop`.`rating` TO 'webshop_user'@'localhost';
+CREATE USER 'webshop_user'@'%' IDENTIFIED BY 'changeit';
+grant all privileges on *.* to bill@localhost with grant option;
+  
+GRANT SELECT ON `webshop`.* TO 'webshop_user'@'%';
+GRANT INSERT, UPDATE, DELETE ON `webshop`.`shopuser` TO 'webshop_user'@'%';
+GRANT INSERT, UPDATE, DELETE ON `webshop`.`v_product` TO 'webshop_user'@'%';
+GRANT INSERT, UPDATE, DELETE ON `webshop`.`product` TO 'webshop_user'@'%';
+GRANT INSERT, UPDATE, DELETE ON `webshop`.`purchase` TO 'webshop_user'@'%';
+GRANT INSERT, UPDATE, DELETE ON `webshop`.`offer` TO 'webshop_user'@'%';
+GRANT INSERT, UPDATE, DELETE ON `webshop`.`rating` TO 'webshop_user'@'%';
 

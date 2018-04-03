@@ -21,7 +21,7 @@ public abstract class DBAccess {
 	private void init() throws ServletException {
 		try {
 			String driver = "com.mysql.jdbc.Driver";
-			String dbURL = "jdbc:mysql://localhost/webshop";
+			String dbURL = "jdbc:mysql://mysql:3306/webshop?autoReconnect=true&useSSL=false";
 			String dbUser = "webshop_user";
 			String dbPass = "changeit";
 
@@ -30,7 +30,7 @@ public abstract class DBAccess {
 
 			// Connect to DB
 			connection = DriverManager.getConnection(dbURL, dbUser, dbPass);
-
+			System.out.print("\"Hello\"");
 		} catch (Exception exc) {
 			throw new ServletException("SQL-Exception", exc);
 		}

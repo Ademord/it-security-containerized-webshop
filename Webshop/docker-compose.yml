@@ -1,0 +1,13 @@
+version: '2'
+services:
+  mysql:
+    container_name: mysql
+    image: ademord/webshop_db
+    command: mysqld --sql_mode=""
+    ports:
+      - "3306:3306"
+  webshop:
+    container_name: webshop
+    image: ademord/webshop
+    ports:
+      - "8080:8080"
